@@ -16,7 +16,7 @@ namespace connect_to_ue
 
         }
 
-        protected void btn_register_Click(object sender, EventArgs e)
+        protected void btn_login_Click(object sender, EventArgs e)
         {
             //if (txt_password.Text.Length < 6)
             //{
@@ -29,22 +29,28 @@ namespace connect_to_ue
 
             lbl_Message.Text = ds.Tables[0].Rows[0][0].ToString();
 
-            DataTable dt_user = ds.Tables[1];
-
-            User logged_user = new User();
-            logged_user.Id =Convert.ToInt32( dt_user.Rows[0]["ID"]);
-            logged_user.Email = (dt_user.Rows[0]["email"]).ToString();
-            logged_user.Password = (dt_user.Rows[0]["parola"]).ToString();
-            logged_user.User_type = Convert.ToInt32(dt_user.Rows[0]["tiputilizatorid"]);
-
-            Session["user"] = logged_user;
 
 
+            if (ds.Tables[1].Rows.Count != 0)
+            {
+                DataTable dt_user = ds.Tables[1];
+
+                User logged_user = new User();
+                logged_user.Id = Convert.ToInt32(dt_user.Rows[0]["ID"]);
+                logged_user.Email = (dt_user.Rows[0]["email"]).ToString();
+                logged_user.Password = (dt_user.Rows[0]["parola"]).ToString();
+                logged_user.User_type = Convert.ToInt32(dt_user.Rows[0]["tiputilizatorid"]);
+
+                Session["user"] = logged_user;
+
+
+                Response.Redirect("articles_page.aspx");
+            }
 
         }
         protected void link_account_Click(object sender, EventArgs e)
         {
-            Response.Redirect("account_user.aspx");
+            Response.Redirect("inregistrare.aspx");
         }
 
       

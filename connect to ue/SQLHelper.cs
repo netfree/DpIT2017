@@ -20,6 +20,11 @@ namespace ConnectToUE
             connectionString = ConfigurationManager.ConnectionStrings["ConnectToUE"].ConnectionString;
         }
 
+        internal static DataTable Generate_my_channels(object id_user)
+        {
+            throw new NotImplementedException();
+        }
+
         private static DataTable ExecuteStoredProcedure(string procedureName, params SqlParameter[] parameterList)
         {
             DataTable result = new DataTable();
@@ -215,5 +220,12 @@ namespace ConnectToUE
             return dt;
         }
 
+        public static DataTable Generate_my_channels(int id_user)
+        {
+            DataTable dt = ExecuteStoredProcedure("Generare_canale_preferate", new SqlParameter[] {
+                new SqlParameter("UtilizatorID",id_user)
+                });
+            return dt;
+        }
     }
 }

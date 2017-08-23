@@ -217,6 +217,7 @@
     <Content Include="inregistrare.aspx" />
     <Content Include="logare.aspx" />
     <Content Include="pag2.aspx" />
+    <Content Include="script generare bd.sql" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />

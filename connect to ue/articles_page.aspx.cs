@@ -13,9 +13,17 @@ namespace connect_to_ue
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            DataTable dt = SQLHelper.Show_Channels();
-            Repeater1.DataSource = dt;
-            Repeater1.DataBind();
+            if (!IsPostBack)
+            {
+                DataTable dt = SQLHelper.Generate_my_channels(((User)Session["user"]).Id);
+                foreach (DataRow row in dt.Rows)
+                {
+                    ListItem item = new ListItem(row["Nume"].ToString(), row["ID"].ToString());
+                    lb_my_channels.Items.Add(item);
+                }
+            }
+
+
         }
     }
 }

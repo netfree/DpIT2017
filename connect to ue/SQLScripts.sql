@@ -61,3 +61,19 @@ go
 
 -------------------------
 
+IF EXISTS (SELECT * FROM sys.objects WHERE type = 'P' AND name = 'Generare_canale_preferate')
+DROP PROCEDURE Generare_canale_preferate
+GO
+
+create procedure Generare_canale_preferate(@UtilizatorID int)
+as
+begin
+	select Canal.ID,Nume
+	from Utilizator_Canal inner join Canal on Utilizator_Canal.CanalID=Canal.ID
+	where @UtilizatorID = UtilizatorID and Canal.Activ = 1
+end
+
+go
+
+--------------------------------
+

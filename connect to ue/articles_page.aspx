@@ -4,21 +4,6 @@
 
 <asp:Repeater ID="Repeater1" runat="server">
 
-    <%--<ItemTemplate>
-
-         <div>
-
-             <table>
-
-                 <tr><td><%#Eval("Nume") %></td></tr>
-              
-             </table>
-
-         </div>
-
-     </ItemTemplate>    --%>       
-    
-    
      <HeaderTemplate>
               <table>
               <tr>
@@ -41,6 +26,9 @@
           </FooterTemplate>   
               
 </asp:Repeater>
+
+
+    <asp:ListBox ID="lb_my_channels" runat="server"></asp:ListBox>
 
 
 </asp:Content>

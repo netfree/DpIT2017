@@ -42,7 +42,7 @@
             <br />
 
 
-            <asp:Button ID="btn_register" runat="server" Text="Connect to U.E." OnClick="btn_register_Click" CssClass="btn" />
+            <asp:Button ID="btn_login" runat="server" Text="Connect to U.E." OnClick="btn_login_Click" CssClass="btn" />
                 <br />
             <asp:LinkButton ID="link_password" runat="server" CssClass="link">Ti-ai uitat parola?</asp:LinkButton>
         
