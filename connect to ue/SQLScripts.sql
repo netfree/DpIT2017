@@ -92,3 +92,30 @@ end
 
 go
 
+
+IF EXISTS (SELECT * FROM sys.objects WHERE type = 'P' AND name = 'Selectare_Articole_cu_canal')
+DROP PROCEDURE Selectare_Articole
+GO
+
+create procedure Selectare_Articole(@)
+as
+begin
+	select * from Articol
+end
+
+go
+--------------
+IF EXISTS (SELECT * FROM sys.objects WHERE type = 'P' AND name = 'Selectare_Articole_cu_canal')
+DROP PROCEDURE Selectare_Articole_cu_canal
+GO
+
+create procedure Selectare_Articole_cu_canal(@mycanal int)
+as
+begin
+	select Articol.Titlu, Articol.Continut 
+	from Articol_canal inner join Articol on Articol.Id = Articol_canal.Id_articol  
+	where Id_canal = @mycanal
+end
+
+go
+

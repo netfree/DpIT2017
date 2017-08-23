@@ -29,5 +29,12 @@ namespace connect_to_ue
             rpt_list_articles.DataBind();
 
         }
+
+        protected void lb_my_channels_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            var selection = lb_my_channels.SelectedItem;
+
+
+        }
     }
 }

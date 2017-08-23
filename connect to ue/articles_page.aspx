@@ -3,7 +3,7 @@
 
 
 
-    <asp:ListBox ID="lb_my_channels" runat="server"></asp:ListBox>
+    <asp:ListBox ID="lb_my_channels" runat="server" OnSelectedIndexChanged="lb_my_channels_SelectedIndexChanged"></asp:ListBox>
 
 
 <asp:Repeater ID="rpt_list_articles" runat="server">
