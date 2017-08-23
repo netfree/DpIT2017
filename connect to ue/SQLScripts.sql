@@ -61,6 +61,7 @@ go
 
 -------------------------
 
+<<<<<<< HEAD
 IF EXISTS (SELECT * FROM sys.objects WHERE type = 'P' AND name = 'Generare_canale_preferate')
 DROP PROCEDURE Generare_canale_preferate
 GO
@@ -77,3 +78,17 @@ go
 
 --------------------------------
 
+=======
+
+IF EXISTS (SELECT * FROM sys.objects WHERE type = 'P' AND name = 'Selectare_Articole')
+DROP PROCEDURE Selectare_Articole
+GO
+
+create procedure Selectare_Articole 
+as
+begin
+	select * from Articol
+end
+
+go
+>>>>>>> f3a064615bb06db62e8a6a34c4b351866bff045d

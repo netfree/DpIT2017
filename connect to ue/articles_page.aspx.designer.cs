@@ -22,12 +22,20 @@ namespace connect_to_ue {
         protected global::System.Web.UI.WebControls.Repeater Repeater1;
         
         /// <summary>
+<<<<<<< HEAD
         /// lb_my_channels control.
+=======
+        /// rpt_list_articles control.
+>>>>>>> f3a064615bb06db62e8a6a34c4b351866bff045d
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
+<<<<<<< HEAD
         protected global::System.Web.UI.WebControls.ListBox lb_my_channels;
+=======
+        protected global::System.Web.UI.WebControls.Repeater rpt_list_articles;
+>>>>>>> f3a064615bb06db62e8a6a34c4b351866bff045d
     }
 }
