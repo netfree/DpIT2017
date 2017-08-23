@@ -13,9 +13,13 @@ namespace connect_to_ue
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            DataTable dt = SQLHelper.Show_Channels();
-            Repeater1.DataSource = dt;
-            Repeater1.DataBind();
+            //DataTable dt = SQLHelper.Show_Channels();
+            //Repeater1.DataSource = dt;
+            //Repeater1.DataBind();
+
+            DataTable articles = SQLHelper.Show_Articles();
+            rpt_list_articles.DataSource = articles;
+            rpt_list_articles.DataBind();
         }
     }
 }

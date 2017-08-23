@@ -61,3 +61,15 @@ go
 
 -------------------------
 
+
+IF EXISTS (SELECT * FROM sys.objects WHERE type = 'P' AND name = 'Selectare_Articole')
+DROP PROCEDURE Selectare_Articole
+GO
+
+create procedure Selectare_Articole 
+as
+begin
+	select * from Articol
+end
+
+go

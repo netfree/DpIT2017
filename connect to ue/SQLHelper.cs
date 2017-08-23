@@ -215,5 +215,11 @@ namespace ConnectToUE
             return dt;
         }
 
+        public static DataTable Show_Articles ()
+        {
+            DataTable dt = ExecuteStoredProcedure("Selectare_Articole");
+            return dt;
+        }
+
     }
 }

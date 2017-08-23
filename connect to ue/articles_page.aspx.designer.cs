@@ -20,5 +20,14 @@ namespace connect_to_ue {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Repeater Repeater1;
+        
+        /// <summary>
+        /// rpt_list_articles control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Repeater rpt_list_articles;
     }
 }
