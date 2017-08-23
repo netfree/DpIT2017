@@ -220,7 +220,6 @@ namespace ConnectToUE
             return dt;
         }
 
-<<<<<<< HEAD
         public static DataTable Generate_my_channels(int id_user)
         {
             DataTable dt = ExecuteStoredProcedure("Generare_canale_preferate", new SqlParameter[] {
@@ -228,13 +227,12 @@ namespace ConnectToUE
                 });
             return dt;
         }
-=======
+
         public static DataTable Show_Articles ()
         {
             DataTable dt = ExecuteStoredProcedure("Selectare_Articole");
             return dt;
         }
 
->>>>>>> f3a064615bb06db62e8a6a34c4b351866bff045d
     }
 }

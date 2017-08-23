@@ -2,35 +2,10 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
 
 
-<asp:Repeater ID="Repeater1" runat="server">
 
-     <HeaderTemplate>
-              <table>
-              <tr>
-                 <th>Nume Canale</th>
-              </tr>
-          </HeaderTemplate>
-
-          <ItemTemplate>
-          <tr>
-              <td>
-                <asp:Label runat="server" ID="Label1" 
-                    text='<%# Eval("Nume") %>' />
-              </td>
-          </tr>
-          </ItemTemplate>
-
-
-          <FooterTemplate>
-              </table>
-          </FooterTemplate>   
-              
-</asp:Repeater>
-
-
-<<<<<<< HEAD
     <asp:ListBox ID="lb_my_channels" runat="server"></asp:ListBox>
-=======
+
+
 <asp:Repeater ID="rpt_list_articles" runat="server">
     <HeaderTemplate>
         <table>
@@ -56,7 +31,6 @@
     </FooterTemplate>
 
 </asp:Repeater>
->>>>>>> f3a064615bb06db62e8a6a34c4b351866bff045d
 
 
 </asp:Content>

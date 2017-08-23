@@ -13,7 +13,7 @@ namespace connect_to_ue
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-<<<<<<< HEAD
+
             if (!IsPostBack)
             {
                 DataTable dt = SQLHelper.Generate_my_channels(((User)Session["user"]).Id);
@@ -24,16 +24,10 @@ namespace connect_to_ue
                 }
             }
 
-
-=======
-            //DataTable dt = SQLHelper.Show_Channels();
-            //Repeater1.DataSource = dt;
-            //Repeater1.DataBind();
-
             DataTable articles = SQLHelper.Show_Articles();
             rpt_list_articles.DataSource = articles;
             rpt_list_articles.DataBind();
->>>>>>> f3a064615bb06db62e8a6a34c4b351866bff045d
+
         }
     }
 }
