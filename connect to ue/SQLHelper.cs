@@ -209,5 +209,11 @@ namespace ConnectToUE
             return dt;
         }
 
+        public static DataTable Show_Channels( )
+        {
+            DataTable dt = ExecuteStoredProcedure("Selectare_Canale");
+            return dt;
+        }
+
     }
 }
