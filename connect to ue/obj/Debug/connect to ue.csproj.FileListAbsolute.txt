@@ -156,3 +156,4 @@ E:\Github_Connect_to_UE\DpIT2017\connect to ue\bin\Microsoft.Owin.Security.OAuth
 E:\Github_Connect_to_UE\DpIT2017\connect to ue\obj\Debug\connect to ue.csprojResolveAssemblyReference.cache
 E:\Github_Connect_to_UE\DpIT2017\connect to ue\obj\Debug\connect to ue.dll
 E:\Github_Connect_to_UE\DpIT2017\connect to ue\obj\Debug\connect to ue.pdb
+C:\Users\Alexis\Documents\GitHub\DpIT2017\connect to ue\bin\AjaxControlToolkit.dll
