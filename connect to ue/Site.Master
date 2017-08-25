@@ -65,7 +65,8 @@
 
                     <div id="div_logat" runat="server">
                         <ul class="nav navbar-nav navbar-right">
-                                <li><a href="editare_profil.aspx">Hello,<%:UserEmail %> </a></li>
+                                <li><a href="editare_profil.aspx" runat="server">Hello, <%:UserEmail %> </a></li>
+                        <%--  <li><asp:LinkButton ID="link_btn_logout" runat="server" href="Default.aspx">Log out</asp:LinkButton></li>--%>
                                 <li><a id="link_logout" href="Default.aspx" runat="server">Log out</a></li>
                             </ul>
 

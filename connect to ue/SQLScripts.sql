@@ -29,9 +29,14 @@ begin
 	   else select 'Parola incorecta'
     end
 	else select 'Email incorect sau cont inexistent'
-
+ 
+ select *  
+ from Utilizator   
+ where email = @email and parola = @parola   
 
 end
+---------------------
+  
 
 go 
 
@@ -134,3 +139,5 @@ begin
 end
 
 go
+
+---------------------------------------------------

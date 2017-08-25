@@ -9,7 +9,7 @@
     <br />
     Add author: <input id="input_box" type="text" />
     <br />
-    <asp:Button ID="btn_submit_art" runat="server" Text="Button" />
+    <asp:Button ID="btn_submit_art" runat="server" Text="Button" OnClick="btn_submit_art_Click" />
 </asp:Content>
 
 

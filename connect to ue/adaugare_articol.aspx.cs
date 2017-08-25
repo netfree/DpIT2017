@@ -20,5 +20,10 @@ namespace connect_to_ue
                 ckboxlist_channels.Items.Add(item);
             }
         }
+
+        protected void btn_submit_art_Click(object sender, EventArgs e)
+        {
+            // 
+        }
     }
 }

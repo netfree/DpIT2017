@@ -28,6 +28,14 @@ namespace connect_to_ue
         protected void Page_Init(object sender, EventArgs e)
         {
            Page.PreLoad += master_Page_PreLoad;
+            link_logout.ServerClick += Link_logout_ServerClick;
+        }
+
+        private void Link_logout_ServerClick(object sender, EventArgs e)
+        {
+            Session["user"] = null;
+
+            Response.Redirect("logare.aspx");
         }
 
         protected void master_Page_PreLoad(object sender, EventArgs e)
@@ -47,6 +55,12 @@ namespace connect_to_ue
                 div_logat.Visible = false;
                 div_anonim.Visible = true;
             }
+        }
+        protected void logout_Click (object sender, EventArgs e)
+        {
+            Session["user"] = null;
+
+            Response.Redirect("logare.aspx");
         }
               
     }
