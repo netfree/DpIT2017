@@ -6,6 +6,9 @@
     <asp:ListBox ID="lb_my_channels" runat="server" OnSelectedIndexChanged="lb_my_channels_SelectedIndexChanged"></asp:ListBox>
 
 
+    <asp:Label ID="lbl_msg" runat="server" Text="Nothing Yet."></asp:Label>
+    <br />
+
 <asp:Repeater ID="rpt_list_articles" runat="server">
     <HeaderTemplate>
         <table>

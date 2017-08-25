@@ -10,33 +10,24 @@
 namespace connect_to_ue {
     
     
-    public partial class articles_page {
+    public partial class adaugare_articol {
         
         /// <summary>
-        /// lb_my_channels control.
+        /// ckboxlist_channels control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ListBox lb_my_channels;
+        protected global::System.Web.UI.WebControls.CheckBoxList ckboxlist_channels;
         
         /// <summary>
-        /// lbl_msg control.
+        /// btn_submit_art control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbl_msg;
-        
-        /// <summary>
-        /// rpt_list_articles control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Repeater rpt_list_articles;
+        protected global::System.Web.UI.WebControls.Button btn_submit_art;
     }
 }

@@ -234,5 +234,22 @@ namespace ConnectToUE
             return dt;
         }
 
+        public static int giveNumegetID(string Nume)
+        {
+            DataTable dt = ExecuteStoredProcedure("giveNumegetID", new SqlParameter[] {
+                new SqlParameter("canal_nume",Nume)
+                });
+
+            return Convert.ToInt32(dt.Rows[0][0]);
+        }
+
+        public static DataTable Show_Curstom_Articles(int channelID)
+        {
+            DataTable dt = ExecuteStoredProcedure("Selectare_Articole_cu_canal", new SqlParameter[] {
+                new SqlParameter("mycanal",channelID)
+                });
+            return dt;
+        }
+
     }
 }

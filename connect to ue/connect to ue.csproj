@@ -204,6 +204,7 @@
     <Content Include="Account\TwoFactorAuthenticationSignIn.aspx" />
     <Content Include="Account\VerifyPhoneNumber.aspx" />
     <Content Include="account_user.aspx" />
+    <Content Include="adaugare_articol.aspx" />
     <Content Include="articles_page.aspx" />
     <Content Include="Contact.aspx" />
     <Content Include="Content\bootstrap.css" />
@@ -393,6 +394,13 @@
     </Compile>
     <Compile Include="account_user.aspx.designer.cs">
       <DependentUpon>account_user.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="adaugare_articol.aspx.cs">
+      <DependentUpon>adaugare_articol.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="adaugare_articol.aspx.designer.cs">
+      <DependentUpon>adaugare_articol.aspx</DependentUpon>
     </Compile>
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="About.aspx.cs">

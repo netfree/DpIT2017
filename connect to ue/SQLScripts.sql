@@ -112,10 +112,25 @@ GO
 create procedure Selectare_Articole_cu_canal(@mycanal int)
 as
 begin
-	select Articol.Titlu, Articol.Continut 
+	select *
 	from Articol_canal inner join Articol on Articol.Id = Articol_canal.Id_articol  
 	where Id_canal = @mycanal
 end
 
 go
 
+--------------
+
+IF EXISTS (SELECT * FROM sys.objects WHERE type = 'P' AND name = 'giveNumegetID')
+DROP PROCEDURE giveNumegetID
+GO
+
+create procedure giveNumegetID(@canal_nume nvarchar(max))
+as
+begin
+	select Canal.ID
+	from Canal 
+	where Canal.Nume = @canal_nume and Canal.Activ = 1;
+end
+
+go
