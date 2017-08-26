@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using ConnectToUE;
 
 namespace connect_to_ue
 {
@@ -11,6 +12,11 @@ namespace connect_to_ue
         string email;
         string password;
         int user_type;
+
+        public bool isAdmin()
+        {
+            return SQLHelper.giveIDgetTipUtilizator(user_type) == "Admin";
+        }
 
         public int Id
         {

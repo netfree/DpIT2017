@@ -102,7 +102,7 @@ IF EXISTS (SELECT * FROM sys.objects WHERE type = 'P' AND name = 'Selectare_Arti
 DROP PROCEDURE Selectare_Articole
 GO
 
-create procedure Selectare_Articole(@)
+create procedure Selectare_Articole
 as
 begin
 	select * from Articol
@@ -149,6 +149,20 @@ create procedure giveTipUtilizatorgetID (@tip_utilizator_name varchar(max) )
 as
 begin
 	select TipUtilizator.ID from TipUtilizator where TipUtilizator.Nume = @tip_utilizator_name
+end
+
+go
+
+--------------------------------------------
+
+IF EXISTS (SELECT * FROM sys.objects WHERE type = 'P' AND name = 'giveIDgetTipUtilizator')
+DROP PROCEDURE giveIDgetTipUtilizator
+GO
+
+create procedure giveIDgetTipUtilizator (@tip_utilizator_id int)
+as
+begin
+	select TipUtilizator.Nume from TipUtilizator where TipUtilizator.Id = @tip_utilizator_id
 end
 
 go

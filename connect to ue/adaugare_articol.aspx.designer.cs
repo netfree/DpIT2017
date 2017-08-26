@@ -13,6 +13,15 @@ namespace connect_to_ue {
     public partial class adaugare_articol {
         
         /// <summary>
+        /// lbl_error control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lbl_error;
+        
+        /// <summary>
         /// ckboxlist_channels control.
         /// </summary>
         /// <remarks>

@@ -1,6 +1,8 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="adaugare_articol.aspx.cs" Inherits="connect_to_ue.adaugare_articol" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
 
+    <asp:Label ID="lbl_error" runat="server" Text=""></asp:Label>
+
     <h1>Add Article:</h1> <br />
     
     Content:<textarea id="TextArea1" cols="20" rows="2"></textarea>

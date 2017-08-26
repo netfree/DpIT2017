@@ -6,6 +6,7 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Web;
+using connect_to_ue;
 
 namespace ConnectToUE
 {
@@ -259,6 +260,14 @@ namespace ConnectToUE
                 new SqlParameter("tip_utilizator_name",tip_utilizator_name)
                 });
             return Convert.ToInt32(dt.Rows[0][0]);
+        }
+
+        public static string giveIDgetTipUtilizator(int ID)
+        {
+            DataTable dt = ExecuteStoredProcedure("giveIDgetTipUtilizator", new SqlParameter[] {
+                new SqlParameter("tip_utilizator_ID",ID)
+                });
+            return dt.Rows[0][0].ToString();
         }
 
     }
