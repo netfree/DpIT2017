@@ -40,15 +40,6 @@ namespace connect_to_ue {
         protected global::System.Web.UI.WebControls.TextBox txt_email;
         
         /// <summary>
-        /// rfv_email control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfv_email;
-        
-        /// <summary>
         /// lbl_password control.
         /// </summary>
         /// <remarks>
@@ -65,15 +56,6 @@ namespace connect_to_ue {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txt_password;
-        
-        /// <summary>
-        /// rfv_password control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfv_password;
         
         /// <summary>
         /// checkbox_remember control.

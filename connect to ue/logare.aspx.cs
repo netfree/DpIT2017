@@ -25,26 +25,32 @@ namespace connect_to_ue
             //}
 
             // Response.Redirect("pag2.aspx");
-            DataSet ds = SQLHelper.VerifyUser(txt_email.Text, txt_password.Text);
 
-            lbl_Message.Text = ds.Tables[0].Rows[0][0].ToString();
-
-
-
-            if (ds.Tables[1].Rows.Count != 0)
+            if (txt_email.Text == "" || txt_password.Text == "")
+                lbl_Message.Text = lbl_Message.Text = "Parola si email-ul sunt necesare!";
+            else
             {
-                DataTable dt_user = ds.Tables[1];
+                DataSet ds = SQLHelper.VerifyUser(txt_email.Text, txt_password.Text);
 
-                User logged_user = new User();
-                logged_user.Id = Convert.ToInt32(dt_user.Rows[0]["ID"]);
-                logged_user.Email = (dt_user.Rows[0]["email"]).ToString();
-                logged_user.Password = (dt_user.Rows[0]["parola"]).ToString();
-                logged_user.User_type = Convert.ToInt32(dt_user.Rows[0]["tiputilizatorid"]);
-
-                Session["user"] = logged_user;
+                lbl_Message.Text = ds.Tables[0].Rows[0][0].ToString();
 
 
-                Response.Redirect("articles_page.aspx");
+
+                if (ds.Tables[1].Rows.Count != 0)
+                {
+                    DataTable dt_user = ds.Tables[1];
+
+                    User logged_user = new User();
+                    logged_user.Id = Convert.ToInt32(dt_user.Rows[0]["ID"]);
+                    logged_user.Email = (dt_user.Rows[0]["email"]).ToString();
+                    logged_user.Password = (dt_user.Rows[0]["parola"]).ToString();
+                    logged_user.User_type = Convert.ToInt32(dt_user.Rows[0]["tiputilizatorid"]);
+
+                    Session["user"] = logged_user;
+
+
+                    Response.Redirect("articles_page.aspx");
+                }
             }
 
         }

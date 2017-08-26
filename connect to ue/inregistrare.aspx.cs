@@ -41,7 +41,7 @@ namespace connect_to_ue
 
             if (lbl_errors.Text.Length == 0)
             {
-                DataTable dt = SQLHelper.InsertUser(txt_email.Text, txt_password.Text, 1);
+                DataTable dt = SQLHelper.InsertUser(txt_email.Text, txt_password.Text, SQLHelper.giveTipUtilizatorgetID("Standard"));
                 int Utilizator_ID =Convert.ToInt32(dt.Rows[0]["Utilizator_ID"]);
                 foreach (ListItem item in checkboxlist_channels.Items)
                 {

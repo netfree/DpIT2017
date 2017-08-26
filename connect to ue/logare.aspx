@@ -20,7 +20,7 @@
                 <tr>
                     <td> <asp:Label ID="lbl_email" runat="server" Text="E-mail" CssClass="txt"></asp:Label></td>
                     <td> <asp:TextBox ID="txt_email" runat="server" CssClass="input"></asp:TextBox>
-            <asp:RequiredFieldValidator ID="rfv_email" runat="server" ErrorMessage="E-mail is required" ControlToValidate="txt_email" CssClass="error_message"></asp:RequiredFieldValidator></td>
+           <%-- <asp:RequiredFieldValidator ID="rfv_email" runat="server" ErrorMessage="E-mail is required" ControlToValidate="txt_email" CssClass="error_message"></asp:RequiredFieldValidator></td>--%>
                 </tr>
          
            
@@ -29,7 +29,7 @@
                 <tr>
                     <td>            <asp:Label ID="lbl_password" runat="server" Text="Password" CssClass="txt"></asp:Label> </td>
             <td><asp:TextBox ID="txt_password" runat="server" placeholder="min 6 char" CssClass="input"></asp:TextBox>            
-            <asp:RequiredFieldValidator ID="rfv_password" runat="server" ControlToValidate="txt_password" ErrorMessage="Password is required" CssClass="error_message"></asp:RequiredFieldValidator>
+            <%--<asp:RequiredFieldValidator ID="rfv_password" runat="server" ControlToValidate="txt_password" ErrorMessage="Password is required" CssClass="error_message"></asp:RequiredFieldValidator>--%>
             </td>
                     </tr>
                 </table>

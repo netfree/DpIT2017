@@ -53,6 +53,8 @@ namespace ConnectToUE
             }
             catch (Exception ex)
             {
+                System.Diagnostics.Debug.WriteLine("An error occured while connecting to the database.");
+
                 string parameters = string.Empty;
 
                 foreach (SqlParameter sqlParameter in parameterList)
@@ -249,6 +251,14 @@ namespace ConnectToUE
                 new SqlParameter("mycanal",channelID)
                 });
             return dt;
+        }
+
+        public static int giveTipUtilizatorgetID(string tip_utilizator_name)
+        {
+            DataTable dt = ExecuteStoredProcedure("giveTipUtilizatorgetID", new SqlParameter[] {
+                new SqlParameter("tip_utilizator_name",tip_utilizator_name)
+                });
+            return Convert.ToInt32(dt.Rows[0][0]);
         }
 
     }

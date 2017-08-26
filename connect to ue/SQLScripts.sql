@@ -141,3 +141,14 @@ end
 go
 
 ---------------------------------------------------
+IF EXISTS (SELECT * FROM sys.objects WHERE type = 'P' AND name = 'giveTipUtilizatorgetID')
+DROP PROCEDURE giveTipUtilizatorgetID
+GO
+
+create procedure giveTipUtilizatorgetID (@tip_utilizator_name varchar(max) )
+as
+begin
+	select TipUtilizator.ID from TipUtilizator where TipUtilizator.Nume = @tip_utilizator_name
+end
+
+go
