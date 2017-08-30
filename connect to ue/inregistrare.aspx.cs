@@ -43,11 +43,13 @@ namespace connect_to_ue
             {
                 DataTable dt = SQLHelper.InsertUser(txt_email.Text, txt_password.Text, SQLHelper.giveTipUtilizatorgetID("Standard"));
                 int Utilizator_ID =Convert.ToInt32(dt.Rows[0]["Utilizator_ID"]);
+
                 foreach (ListItem item in checkboxlist_channels.Items)
                 {
                     if (item.Selected)
                         SQLHelper.InsertPreferences(Utilizator_ID, Convert.ToInt32(item.Value));
                 }
+
                 User registered_user = new User();
                 registered_user.Id =Convert.ToInt32 (dt.Rows[0][0]);
                 registered_user.Email = txt_email.Text;

@@ -166,3 +166,20 @@ begin
 end
 
 go
+
+
+----------------------------------------------
+
+IF EXISTS (SELECT * FROM sys.objects WHERE type = 'P' AND name = 'insertArticle')
+DROP PROCEDURE insertArticle
+GO
+
+create procedure insertArticle (@title nvarchar(max), @content nvarchar(max), @author nvarchar (max))
+as 
+begin
+
+	insert into Articol values(@title, @content , 1, @author , 1)
+
+end
+
+go

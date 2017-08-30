@@ -22,13 +22,22 @@ namespace connect_to_ue {
         protected global::System.Web.UI.WebControls.Label lbl_error;
         
         /// <summary>
-        /// ckboxlist_channels control.
+        /// txt_title control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBoxList ckboxlist_channels;
+        protected global::System.Web.UI.HtmlControls.HtmlTextArea txt_title;
+        
+        /// <summary>
+        /// txt_content control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlTextArea txt_content;
         
         /// <summary>
         /// btn_submit_art control.

@@ -15,12 +15,12 @@ namespace connect_to_ue
         {
             if (!IsPostBack)
             {
-                DataTable dt = SQLHelper.GetChannels();
-                foreach (DataRow row in dt.Rows)
-                {
-                    ListItem item = new ListItem(row["Nume"].ToString(), row["ID"].ToString());
-                    ckboxlist_channels.Items.Add(item);
-                }
+                //DataTable dt = SQLHelper.GetChannels();
+                //foreach (DataRow row in dt.Rows)
+                //{
+                //    ListItem item = new ListItem(row["Nume"].ToString(), row["ID"].ToString());
+                //    ckboxlist_channels.Items.Add(item);
+                //}
             }
         }
 
@@ -30,7 +30,10 @@ namespace connect_to_ue
             if (((User)Session["user"]).isAdmin() == false)
                 lbl_error.Text = "Nu ai autorizatie sa adaugi un nou articol!";
             else
-                lbl_error.Text = "Ai autorizatie sa adaugi un nou articol!";
+                SQLHelper.insertArticle(txt_title.InnerText, txt_content.InnerText, ((User)Session["user"]).Email);
+
+            
+               
 
         }
     }

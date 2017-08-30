@@ -270,5 +270,31 @@ namespace ConnectToUE
             return dt.Rows[0][0].ToString();
         }
 
+        public static void insertArticle(string title, string content, string author)
+        {
+            //System.Diagnostics.Debug.WriteLine(((User)Session["user"]).Email);
+
+            DataTable dt = ExecuteStoredProcedure("insertArticle", new SqlParameter[] {
+                new SqlParameter("title",title),
+                new SqlParameter("content",content),
+                new SqlParameter("author",author),
+            });
+        }
+
+        public static void deleteAllFromChannel(int channelId)
+        {
+            DataTable dt = ExecuteStoredProcedure("deleteAllFromChannel", new SqlParameter[] {
+                new SqlParameter("channelId",channelId)
+            });
+        }
+
+        public static void addChannelToArticle(int channelId, int articleId)
+        {
+            DataTable dt = ExecuteStoredProcedure("addChannelToArticle", new SqlParameter[] {
+                new SqlParameter("channelId",channelId),
+                new SqlParameter("articleId",articleId)
+            });
+        }
+
     }
 }

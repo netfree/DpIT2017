@@ -5,12 +5,14 @@
 
     <h1>Add Article:</h1> <br />
     
-    Content:<textarea id="TextArea1" cols="20" rows="2"></textarea>
+    Title:<textarea id="txt_title" runat="server" cols="20" rows="2"></textarea>
     <br />
-    Check Channels: <br /> <asp:CheckBoxList ID="ckboxlist_channels" runat="server"></asp:CheckBoxList>
+
+    Content:<textarea id="txt_content" runat="server" cols="20" rows="100"></textarea>
     <br />
-    Add author: <input id="input_box" type="text" />
-    <br />
+    <%--Check Channels: <br /> <asp:CheckBoxList ID="ckboxlist_channels" runat="server"></asp:CheckBoxList>
+    <br />--%>
+   
     <asp:Button ID="btn_submit_art" runat="server" Text="Button" OnClick="btn_submit_art_Click" />
 </asp:Content>
 
