@@ -228,3 +228,31 @@ begin
 end
 
 go
+
+------------------------------
+
+IF EXISTS (SELECT * FROM sys.objects WHERE type = 'P' AND name = 'deleteAllChannelsFromUser')
+DROP PROCEDURE deleteAllChannelsFromUser
+GO
+
+create procedure deleteAllChannelsFromUser (@userId int)
+as
+begin
+	delete from Utilizator_Canal where Utilizator_Canal.UtilizatorID = @userId
+end
+
+go
+
+------------------------------
+
+IF EXISTS (SELECT * FROM sys.objects WHERE type = 'P' AND name = 'channelBelongtoUser')
+DROP PROCEDURE channelBelongtoUser
+GO
+
+create procedure channelBelongtoUser (@channelId int, @userId int)
+as
+begin
+	select * from Utilizator_Canal where Utilizator_Canal.UtilizatorID = @userId and Utilizator_Canal.CanalID = @channelId
+end
+
+go

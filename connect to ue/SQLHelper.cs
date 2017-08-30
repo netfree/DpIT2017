@@ -307,5 +307,24 @@ namespace ConnectToUE
             return Convert.ToInt32(dt.Rows[0][0]);
         }
 
+        public static bool channelBelongtoUser(int channelId, int userId)
+        {
+            DataTable dt = ExecuteStoredProcedure("channelBelongtoUser", new SqlParameter[] {
+                new SqlParameter("channelId",channelId),
+                new SqlParameter("userId",userId)
+            });
+
+            if (dt.Rows.Count != 0)
+                return true;
+            return false;
+        }
+
+        public static void deleteAllChannelsFromUser(int userId)
+        {
+            DataTable dt = ExecuteStoredProcedure("deleteAllChannelsFromUser", new SqlParameter[] {
+                new SqlParameter("userId",userId)
+            });
+        }
+
     }
 }
