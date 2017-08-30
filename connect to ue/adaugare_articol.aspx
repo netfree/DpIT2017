@@ -8,11 +8,12 @@
     Title:<textarea id="txt_title" runat="server" cols="20" rows="2"></textarea>
     <br />
 
-    Content:<textarea id="txt_content" runat="server" cols="20" rows="100"></textarea>
+    Content:<textarea id="txt_content" runat="server" cols="100" rows="20"></textarea>
     <br />
     <%--Check Channels: <br /> <asp:CheckBoxList ID="ckboxlist_channels" runat="server"></asp:CheckBoxList>
     <br />--%>
    
+
     <asp:Button ID="btn_submit_art" runat="server" Text="Button" OnClick="btn_submit_art_Click" />
 </asp:Content>
 

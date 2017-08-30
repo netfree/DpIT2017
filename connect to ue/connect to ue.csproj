@@ -468,6 +468,7 @@
       <DependentUpon>logare.aspx</DependentUpon>
     </Compile>
     <Compile Include="Models\IdentityModels.cs" />
+    <Compile Include="Mondial.cs" />
     <Compile Include="pag2.aspx.cs">
       <DependentUpon>pag2.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
