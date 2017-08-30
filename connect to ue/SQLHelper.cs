@@ -270,7 +270,7 @@ namespace ConnectToUE
             return dt.Rows[0][0].ToString();
         }
 
-        public static void insertArticle(string title, string content, string author)
+        public static int insertArticle(string title, string content, string author)
         {
             //System.Diagnostics.Debug.WriteLine(((User)Session["user"]).Email);
 
@@ -279,12 +279,14 @@ namespace ConnectToUE
                 new SqlParameter("content",content),
                 new SqlParameter("author",author),
             });
+
+            return Convert.ToInt32(dt.Rows[0][0]);
         }
 
-        public static void deleteAllFromChannel(int channelId)
+        public static void deleteAllChannelsFromArticle(int articleId)
         {
-            DataTable dt = ExecuteStoredProcedure("deleteAllFromChannel", new SqlParameter[] {
-                new SqlParameter("channelId",channelId)
+            DataTable dt = ExecuteStoredProcedure("deleteAllChannelsFromArticle", new SqlParameter[] {
+                new SqlParameter("articleId",articleId)
             });
         }
 
@@ -294,6 +296,15 @@ namespace ConnectToUE
                 new SqlParameter("channelId",channelId),
                 new SqlParameter("articleId",articleId)
             });
+        }
+
+        public static int giveEmailgetID (string email)
+        {
+            DataTable dt = ExecuteStoredProcedure("giveEmailgetID", new SqlParameter[] {
+                new SqlParameter("email",email)
+            });
+
+            return Convert.ToInt32(dt.Rows[0][0]);
         }
 
     }

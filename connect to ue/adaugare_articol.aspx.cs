@@ -30,8 +30,10 @@ namespace connect_to_ue
             if (((User)Session["user"]).isAdmin() == false)
                 lbl_error.Text = "Nu ai autorizatie sa adaugi un nou articol!";
             else
-                SQLHelper.insertArticle(txt_title.InnerText, txt_content.InnerText, ((User)Session["user"]).Email);
-
+            {
+                int articleID = SQLHelper.insertArticle(txt_title.InnerText, txt_content.InnerText, ((User)Session["user"]).Email);
+                Response.Redirect("editare_articol.aspx?articol=" + articleID.ToString() );
+            }
             
                
 

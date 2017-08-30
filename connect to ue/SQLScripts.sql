@@ -180,6 +180,51 @@ begin
 
 	insert into Articol values(@title, @content , 1, @author , 1)
 
+	select Articol.Id from Articol where Articol.Titlu = @title and Articol.Continut = @content
+
+end
+
+go
+
+-------------------------------------------------
+
+IF EXISTS (SELECT * FROM sys.objects WHERE type = 'P' AND name = 'deleteAllChannelsFromArticle')
+DROP PROCEDURE deleteAllChannelsFromArticle
+GO
+
+create procedure deleteAllChannelsFromArticle (@articleId int)
+as
+begin
+	delete from Articol_canal where Articol_canal.Id_articol = @articleId
+end
+
+go
+--------------------------
+
+IF EXISTS (SELECT * FROM sys.objects WHERE type = 'P' AND name = 'giveEmailgetID')
+DROP PROCEDURE giveEmailgetID
+GO
+
+create procedure giveEmailgetID (@email varchar(max) )
+as
+begin
+	select Utilizator.ID from Utilizator where Utilizator.Email = @email
+end
+
+go
+
+
+---------------------------------
+
+
+IF EXISTS (SELECT * FROM sys.objects WHERE type = 'P' AND name = 'addChannelToArticle')
+DROP PROCEDURE addChannelToArticle
+GO
+
+create procedure addChannelToArticle(@channelId int, @articleId int)
+as
+begin
+	insert into Articol_canal values(@channelId , @articleId)
 end
 
 go
