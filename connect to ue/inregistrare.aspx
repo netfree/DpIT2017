@@ -7,12 +7,12 @@
     <asp:Label ID="lbl_email" runat="server" Text="Email:"></asp:Label>
     <asp:TextBox ID="txt_email" runat="server"></asp:TextBox>
     <br />
-    <asp:Label ID="lbl_password" runat="server" Text="Password:"></asp:Label>
-    <asp:TextBox ID="txt_password" runat="server" placeholder="Min 6 characters"></asp:TextBox>
+    <asp:Label ID="lbl_password" runat="server" Text="Password:" ></asp:Label>
+    <asp:TextBox ID="txt_password" runat="server" TextMode="Password"></asp:TextBox>
 
      <br />
     <asp:Label ID="lbl_confirm_password" runat="server" Text="Confirm Password:"></asp:Label>
-    <asp:TextBox ID="txt_confirm_password" runat="server" placeholder="Pls Confirm ur psw"></asp:TextBox>
+    <asp:TextBox ID="txt_confirm_password" runat="server" TextMode="Password"></asp:TextBox>
 
     <asp:CheckBoxList ID="checkboxlist_channels" runat="server" RepeatColumns="2">
 

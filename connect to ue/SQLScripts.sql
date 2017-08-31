@@ -256,3 +256,35 @@ begin
 end
 
 go
+
+-------------------------------
+
+IF EXISTS (SELECT * FROM sys.objects WHERE type = 'P' AND name = 'GetHasedPasswdForUser')
+DROP PROCEDURE GetHasedPasswdForUser
+GO
+
+create procedure GetHasedPasswdForUser(@user nvarchar(max))
+as
+begin
+	select Utilizator.Parola
+	from Utilizator
+	where Utilizator.Email = @user
+end
+
+go
+
+------------------------------
+
+IF EXISTS (SELECT * FROM sys.objects WHERE type = 'P' AND name = 'GetAllDataForUser')
+DROP PROCEDURE GetAllDataForUser
+GO
+
+create procedure GetAllDataForUser(@user nvarchar(max))
+as
+begin
+	select *
+	from Utilizator
+	where Utilizator.Email = @user
+end
+
+go

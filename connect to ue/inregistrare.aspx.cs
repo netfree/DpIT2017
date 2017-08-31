@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Data;
 using System.Linq;
 using System.Web;
+using System.Security.Cryptography;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
@@ -40,8 +41,17 @@ namespace connect_to_ue
                 lbl_errors.Text = lbl_errors.Text + "Password is too short" + Environment.NewLine;
 
             if (lbl_errors.Text.Length == 0)
-            {
-                DataTable dt = SQLHelper.InsertUser(txt_email.Text, txt_password.Text, SQLHelper.giveTipUtilizatorgetID("Standard"));
+            { 
+                byte[] salt;
+                new RNGCryptoServiceProvider().GetBytes(salt = new byte[16]);
+                var pbkdf2 = new Rfc2898DeriveBytes(txt_password.Text, salt, 1000);
+                byte[] hash = pbkdf2.GetBytes(20);
+                byte[] hashBytes = new byte[36];
+                Array.Copy(salt, 0, hashBytes, 0, 16);
+                Array.Copy(hash, 0, hashBytes, 16, 20);
+                string savedPasswordHash = Convert.ToBase64String(hashBytes);
+
+                DataTable dt = SQLHelper.InsertUser(txt_email.Text, savedPasswordHash, SQLHelper.giveTipUtilizatorgetID("Standard"));
                 int Utilizator_ID =Convert.ToInt32(dt.Rows[0]["Utilizator_ID"]);
 
                 foreach (ListItem item in checkboxlist_channels.Items)
@@ -57,6 +67,7 @@ namespace connect_to_ue
                 registered_user.User_type =1;
 
                 Session["user"] = registered_user;
+
 
                 Response.Redirect("Default.aspx");
             }

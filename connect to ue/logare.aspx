@@ -28,7 +28,7 @@
        
                 <tr>
                     <td>            <asp:Label ID="lbl_password" runat="server" Text="Password" CssClass="txt"></asp:Label> </td>
-            <td><asp:TextBox ID="txt_password" runat="server" placeholder="min 6 char" CssClass="input"></asp:TextBox>            
+            <td><asp:TextBox ID="txt_password" TextMode="Password" runat="server" CssClass="input"></asp:TextBox>            
             <%--<asp:RequiredFieldValidator ID="rfv_password" runat="server" ControlToValidate="txt_password" ErrorMessage="Password is required" CssClass="error_message"></asp:RequiredFieldValidator>--%>
             </td>
                     </tr>

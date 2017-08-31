@@ -203,7 +203,8 @@ namespace ConnectToUE
             DataTable dt = ExecuteStoredProcedure("Inserare_Utilizator", new SqlParameter[] {
                 new SqlParameter("email",email),
                 new SqlParameter("parola",password),
-                new SqlParameter("tip_utilizator",user_type) });
+                new SqlParameter("tip_utilizator",user_type)
+            });
 
             return dt;
         }
@@ -324,6 +325,29 @@ namespace ConnectToUE
             DataTable dt = ExecuteStoredProcedure("deleteAllChannelsFromUser", new SqlParameter[] {
                 new SqlParameter("userId",userId)
             });
+        }
+
+        public static string GetHasedPasswdForUser(string user)
+        {
+            DataTable dt = ExecuteStoredProcedure("GetHasedPasswdForUser", new SqlParameter[] {
+                new SqlParameter("user", user)
+            });
+
+
+
+            if (dt.Rows.Count != 0)
+                return dt.Rows[0][0].ToString();
+            else return null;
+
+        }
+
+        public static DataTable GetAllDataForUser(string user)
+        {
+            DataTable dt = ExecuteStoredProcedure("GetAllDataForUser", new SqlParameter[] {
+                new SqlParameter("user", user)
+            });
+            return dt;
+
         }
 
     }
