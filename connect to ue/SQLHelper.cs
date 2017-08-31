@@ -271,14 +271,18 @@ namespace ConnectToUE
             return dt.Rows[0][0].ToString();
         }
 
-        public static int insertArticle(string title, string content, string author)
+        public static int insertArticle(string title, string content, string author, int authorId)
         {
             //System.Diagnostics.Debug.WriteLine(((User)Session["user"]).Email);
+
+            DateTime publishDate = System.DateTime.Now;
 
             DataTable dt = ExecuteStoredProcedure("insertArticle", new SqlParameter[] {
                 new SqlParameter("title",title),
                 new SqlParameter("content",content),
                 new SqlParameter("author",author),
+                new SqlParameter("publishDate",publishDate),
+                new SqlParameter("authorId",authorId)
             });
 
             return Convert.ToInt32(dt.Rows[0][0]);

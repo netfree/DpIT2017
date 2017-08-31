@@ -57,11 +57,13 @@ namespace connect_to_ue
             }
 
         }
+
+
         protected void logout_Click (object sender, EventArgs e)
         {
             Session["user"] = null;
 
-            Response.Redirect("logare.aspx");
+            Response.Redirect("Default.aspx");
         }
               
     }

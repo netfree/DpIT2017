@@ -3,7 +3,7 @@
 
 
 
-    <asp:ListBox ID="lb_my_channels" runat="server" OnSelectedIndexChanged="lb_my_channels_SelectedIndexChanged"></asp:ListBox>
+    <asp:ListBox ID="lb_my_channels" runat="server" CssClass="list-group" OnSelectedIndexChanged="lb_my_channels_SelectedIndexChanged"></asp:ListBox>
 
 
     <asp:Label ID="lbl_msg" runat="server" Text="Nothing Yet."></asp:Label>

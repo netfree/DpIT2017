@@ -210,6 +210,7 @@
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\Site.css" />
+    <Content Include="dashboard_admin.aspx" />
     <Content Include="editare_articol.aspx" />
     <Content Include="editare_profil.aspx" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
@@ -428,6 +429,13 @@
     </Compile>
     <Compile Include="Contact.aspx.designer.cs">
       <DependentUpon>Contact.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="dashboard_admin.aspx.cs">
+      <DependentUpon>dashboard_admin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="dashboard_admin.aspx.designer.cs">
+      <DependentUpon>dashboard_admin.aspx</DependentUpon>
     </Compile>
     <Compile Include="Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>

@@ -14,19 +14,11 @@ namespace connect_to_ue
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+               
         }
 
         protected void btn_login_Click(object sender, EventArgs e)
         {
-            //if (txt_password.Text.Length < 6)
-            //{
-            //    //CustomValidator1.ErrorMessage = " prea putin";
-            //    lblMessage.Text = " e32324n";
-            //}
-
-            // Response.Redirect("pag2.aspx");
-
             if (txt_email.Text == "" || txt_password.Text == "")
                 lbl_Message.Text = lbl_Message.Text = "Parola si email-ul sunt necesare!";
             else
@@ -38,19 +30,16 @@ namespace connect_to_ue
                     lbl_Message.Text = "Nu exista acest nume de utilizator";
                 else
                 {
-                    //turn it into bytes
+                    
                     byte[] hashBytes = Convert.FromBase64String(savedPasswordHash);
-                    //take the salt out of the string
+                    
                     byte[] salt = new byte[16];
                     Array.Copy(hashBytes, 0, salt, 0, 16);
-                    //hash the user inputted PW with the salt
+                    
                     var pbkdf2 = new Rfc2898DeriveBytes(txt_password.Text, salt, 1000);
-                    //put the damn thing in a byte vector.. instead of a string. why? why is this necessary?
-                    //who am i to judge cryptography standards i guess
+                    
                     byte[] hash = pbkdf2.GetBytes(20);
-                    //oh, this is why
-                    //compare results! letter by letter!
-                    //starting from 17 cause 0-16 are the salt
+                   
                     int ok = 1;
                     for (int i = 0; i < 20; i++)
                         if (hashBytes[i + 16] != hash[i])
@@ -71,7 +60,7 @@ namespace connect_to_ue
                     }
                     else
                     {
-                        //if wrong password, show
+                        
                         lbl_Message.Text = "Inncorect username or password.";
                     }
                 }

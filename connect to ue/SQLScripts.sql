@@ -98,7 +98,7 @@ end
 go
 
 
-IF EXISTS (SELECT * FROM sys.objects WHERE type = 'P' AND name = 'Selectare_Articole_cu_canal')
+IF EXISTS (SELECT * FROM sys.objects WHERE type = 'P' AND name = 'Selectare_Articole')
 DROP PROCEDURE Selectare_Articole
 GO
 
@@ -174,11 +174,11 @@ IF EXISTS (SELECT * FROM sys.objects WHERE type = 'P' AND name = 'insertArticle'
 DROP PROCEDURE insertArticle
 GO
 
-create procedure insertArticle (@title nvarchar(max), @content nvarchar(max), @author nvarchar (max))
+create procedure insertArticle (@title nvarchar(max), @content nvarchar(max), @author nvarchar (max), @publishdate datetime2(7), @authorId int)
 as 
 begin
 
-	insert into Articol values(@title, @content , 1, @author , 1)
+	insert into Articol values(@title, @content , 1, @author , 1, @publishdate, @authorId)
 
 	select Articol.Id from Articol where Articol.Titlu = @title and Articol.Continut = @content
 
