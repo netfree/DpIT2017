@@ -39,7 +39,7 @@ namespace connect_to_ue
         protected void lb_my_channels_SelectedIndexChanged(object sender, EventArgs e)
         {
             var selection = lb_my_channels.SelectedItem;
-            lbl_msg.Text = lb_my_channels.SelectedItem.ToString();
+            
 
             DataTable articles = SQLHelper.Show_Curstom_Articles(SQLHelper.giveNumegetID(lb_my_channels.SelectedItem.ToString()));
             rpt_list_articles.DataSource = articles;

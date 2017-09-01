@@ -2,39 +2,40 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
 
 
+<div class="row" style="margin-top: 30px">
 
-    <asp:ListBox ID="lb_my_channels" runat="server" OnSelectedIndexChanged="lb_my_channels_SelectedIndexChanged"></asp:ListBox>
+    <asp:ListBox CssClass="col-xs-3" ID="lb_my_channels" runat="server" OnSelectedIndexChanged="lb_my_channels_SelectedIndexChanged"></asp:ListBox>
 
 
-    <asp:Label ID="lbl_msg" runat="server" Text="Nothing Yet."></asp:Label>
-    <br />
-
-<asp:Repeater ID="rpt_list_articles" runat="server">
-    <HeaderTemplate>
-        <table>
-            <tr><th>Here we list all articles:</th></tr>
+    <asp:Repeater ID="rpt_list_articles" runat="server">
+        <HeaderTemplate>
         
-    </HeaderTemplate>
+        <div class="col-xs-9">
+        
+        </HeaderTemplate>
 
-    <ItemTemplate>
-        <tr>
-            <td>Titlu: <%#Eval("Titlu") %></td>
-        </tr>
-        <tr>
-            <td>Continut: <%#Eval("Continut") %></td>
-        </tr>
-        <tr>
-            <td>Autor: <%#Eval("Autor") %></td>
-        </tr>
+        <ItemTemplate>
 
-    </ItemTemplate>
+            <div class="panel panel-default">
+              <div class="panel-heading">
+                <h3 class="panel-title"><%#Eval("Titlu") %> by @<%#Eval("Autor") %></h3>
+              </div>
+              <div class="panel-body">
+                <%#Eval("Continut") %>
+              </div>
+            </div>
 
-    <FooterTemplate>
-        </table>
-    </FooterTemplate>
+     
 
-</asp:Repeater>
+        </ItemTemplate>
 
+        <FooterTemplate>
+            </div>
+        </FooterTemplate>
+
+    </asp:Repeater>
+
+    </div>
 
 </asp:Content>
 

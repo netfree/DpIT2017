@@ -13,9 +13,9 @@ namespace connect_to_ue
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            lbl_Message.Visible = false;
         }
-
+       
         protected void btn_login_Click(object sender, EventArgs e)
         {
             //if (txt_password.Text.Length < 6)
@@ -26,8 +26,12 @@ namespace connect_to_ue
 
             // Response.Redirect("pag2.aspx");
 
+
             if (txt_email.Text == "" || txt_password.Text == "")
+            {
                 lbl_Message.Text = lbl_Message.Text = "Parola si email-ul sunt necesare!";
+                lbl_Message.Visible = true;
+            }
             else
             {
                 DataSet ds = SQLHelper.VerifyUser(txt_email.Text, txt_password.Text);
