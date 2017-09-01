@@ -55,12 +55,15 @@ namespace connect_to_ue
                 div_logat.Visible = false;
                 div_anonim.Visible = true;
             }
+
         }
+
+
         protected void logout_Click (object sender, EventArgs e)
         {
             Session["user"] = null;
 
-            Response.Redirect("logare.aspx");
+            Response.Redirect("Default.aspx");
         }
               
     }

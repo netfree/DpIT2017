@@ -203,7 +203,8 @@ namespace ConnectToUE
             DataTable dt = ExecuteStoredProcedure("Inserare_Utilizator", new SqlParameter[] {
                 new SqlParameter("email",email),
                 new SqlParameter("parola",password),
-                new SqlParameter("tip_utilizator",user_type) });
+                new SqlParameter("tip_utilizator",user_type)
+            });
 
             return dt;
         }
@@ -270,21 +271,27 @@ namespace ConnectToUE
             return dt.Rows[0][0].ToString();
         }
 
-        public static void insertArticle(string title, string content, string author)
+        public static int insertArticle(string title, string content, string author, int authorId)
         {
             //System.Diagnostics.Debug.WriteLine(((User)Session["user"]).Email);
+
+            DateTime publishDate = System.DateTime.Now;
 
             DataTable dt = ExecuteStoredProcedure("insertArticle", new SqlParameter[] {
                 new SqlParameter("title",title),
                 new SqlParameter("content",content),
                 new SqlParameter("author",author),
+                new SqlParameter("publishDate",publishDate),
+                new SqlParameter("authorId",authorId)
             });
+
+            return Convert.ToInt32(dt.Rows[0][0]);
         }
 
-        public static void deleteAllFromChannel(int channelId)
+        public static void deleteAllChannelsFromArticle(int articleId)
         {
-            DataTable dt = ExecuteStoredProcedure("deleteAllFromChannel", new SqlParameter[] {
-                new SqlParameter("channelId",channelId)
+            DataTable dt = ExecuteStoredProcedure("deleteAllChannelsFromArticle", new SqlParameter[] {
+                new SqlParameter("articleId",articleId)
             });
         }
 
@@ -294,6 +301,57 @@ namespace ConnectToUE
                 new SqlParameter("channelId",channelId),
                 new SqlParameter("articleId",articleId)
             });
+        }
+
+        public static int giveEmailgetID (string email)
+        {
+            DataTable dt = ExecuteStoredProcedure("giveEmailgetID", new SqlParameter[] {
+                new SqlParameter("email",email)
+            });
+
+            return Convert.ToInt32(dt.Rows[0][0]);
+        }
+
+        public static bool channelBelongtoUser(int channelId, int userId)
+        {
+            DataTable dt = ExecuteStoredProcedure("channelBelongtoUser", new SqlParameter[] {
+                new SqlParameter("channelId",channelId),
+                new SqlParameter("userId",userId)
+            });
+
+            if (dt.Rows.Count != 0)
+                return true;
+            return false;
+        }
+
+        public static void deleteAllChannelsFromUser(int userId)
+        {
+            DataTable dt = ExecuteStoredProcedure("deleteAllChannelsFromUser", new SqlParameter[] {
+                new SqlParameter("userId",userId)
+            });
+        }
+
+        public static string GetHasedPasswdForUser(string user)
+        {
+            DataTable dt = ExecuteStoredProcedure("GetHasedPasswdForUser", new SqlParameter[] {
+                new SqlParameter("user", user)
+            });
+
+
+
+            if (dt.Rows.Count != 0)
+                return dt.Rows[0][0].ToString();
+            else return null;
+
+        }
+
+        public static DataTable GetAllDataForUser(string user)
+        {
+            DataTable dt = ExecuteStoredProcedure("GetAllDataForUser", new SqlParameter[] {
+                new SqlParameter("user", user)
+            });
+            return dt;
+
         }
 
     }

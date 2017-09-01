@@ -98,7 +98,7 @@ end
 go
 
 
-IF EXISTS (SELECT * FROM sys.objects WHERE type = 'P' AND name = 'Selectare_Articole_cu_canal')
+IF EXISTS (SELECT * FROM sys.objects WHERE type = 'P' AND name = 'Selectare_Articole')
 DROP PROCEDURE Selectare_Articole
 GO
 
@@ -174,12 +174,117 @@ IF EXISTS (SELECT * FROM sys.objects WHERE type = 'P' AND name = 'insertArticle'
 DROP PROCEDURE insertArticle
 GO
 
-create procedure insertArticle (@title nvarchar(max), @content nvarchar(max), @author nvarchar (max))
+create procedure insertArticle (@title nvarchar(max), @content nvarchar(max), @author nvarchar (max), @publishdate datetime2(7), @authorId int)
 as 
 begin
 
-	insert into Articol values(@title, @content , 1, @author , 1)
+	insert into Articol values(@title, @content , 1, @author , 1, @publishdate, @authorId)
 
+	select Articol.Id from Articol where Articol.Titlu = @title and Articol.Continut = @content
+
+end
+
+go
+
+-------------------------------------------------
+
+IF EXISTS (SELECT * FROM sys.objects WHERE type = 'P' AND name = 'deleteAllChannelsFromArticle')
+DROP PROCEDURE deleteAllChannelsFromArticle
+GO
+
+create procedure deleteAllChannelsFromArticle (@articleId int)
+as
+begin
+	delete from Articol_canal where Articol_canal.Id_articol = @articleId
+end
+
+go
+--------------------------
+
+IF EXISTS (SELECT * FROM sys.objects WHERE type = 'P' AND name = 'giveEmailgetID')
+DROP PROCEDURE giveEmailgetID
+GO
+
+create procedure giveEmailgetID (@email varchar(max) )
+as
+begin
+	select Utilizator.ID from Utilizator where Utilizator.Email = @email
+end
+
+go
+
+
+---------------------------------
+
+
+IF EXISTS (SELECT * FROM sys.objects WHERE type = 'P' AND name = 'addChannelToArticle')
+DROP PROCEDURE addChannelToArticle
+GO
+
+create procedure addChannelToArticle(@channelId int, @articleId int)
+as
+begin
+	insert into Articol_canal values(@channelId , @articleId)
+end
+
+go
+
+------------------------------
+
+IF EXISTS (SELECT * FROM sys.objects WHERE type = 'P' AND name = 'deleteAllChannelsFromUser')
+DROP PROCEDURE deleteAllChannelsFromUser
+GO
+
+create procedure deleteAllChannelsFromUser (@userId int)
+as
+begin
+	delete from Utilizator_Canal where Utilizator_Canal.UtilizatorID = @userId
+end
+
+go
+
+------------------------------
+
+IF EXISTS (SELECT * FROM sys.objects WHERE type = 'P' AND name = 'channelBelongtoUser')
+DROP PROCEDURE channelBelongtoUser
+GO
+
+create procedure channelBelongtoUser (@channelId int, @userId int)
+as
+begin
+	select * from Utilizator_Canal where Utilizator_Canal.UtilizatorID = @userId and Utilizator_Canal.CanalID = @channelId
+end
+
+go
+
+-------------------------------
+
+IF EXISTS (SELECT * FROM sys.objects WHERE type = 'P' AND name = 'GetHasedPasswdForUser')
+DROP PROCEDURE GetHasedPasswdForUser
+GO
+
+create procedure GetHasedPasswdForUser(@user nvarchar(max))
+as
+begin
+	select Utilizator.Parola
+	from Utilizator
+	where Utilizator.Email = @user
+end
+
+go
+
+------------------------------
+
+IF EXISTS (SELECT * FROM sys.objects WHERE type = 'P' AND name = 'GetAllDataForUser')
+DROP PROCEDURE GetAllDataForUser
+GO
+
+create procedure GetAllDataForUser(@user nvarchar(max))
+as
+begin
+	select *
+	from Utilizator
+	where Utilizator.Email = @user
 end
 
 go

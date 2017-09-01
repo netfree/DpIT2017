@@ -4,7 +4,11 @@
 
 <div class="row" style="margin-top: 30px">
 
+<<<<<<< HEAD
     <asp:ListBox CssClass="col-xs-3" ID="lb_my_channels" runat="server" OnSelectedIndexChanged="lb_my_channels_SelectedIndexChanged"></asp:ListBox>
+=======
+    <asp:ListBox ID="lb_my_channels" runat="server" CssClass="list-group" OnSelectedIndexChanged="lb_my_channels_SelectedIndexChanged"></asp:ListBox>
+>>>>>>> 677593ab703ae2c611298cab1967ace37c1b330e
 
 
     <asp:Repeater ID="rpt_list_articles" runat="server">

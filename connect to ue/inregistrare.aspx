@@ -1,6 +1,7 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="inregistrare.aspx.cs" Inherits="connect_to_ue.inregistrare" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
+<<<<<<< HEAD
  <div class="row">
 
             <%--<h1 style="margin-left: 120px" >Nume/titlu</h1>--%>
@@ -43,6 +44,20 @@
     </div>
 
      <br />
+=======
+ 
+    <asp:Label ID="lbl_errors" runat="server" Text=""></asp:Label>
+    
+    <asp:Label ID="lbl_email" runat="server" Text="Email:"></asp:Label>
+    <asp:TextBox ID="txt_email" runat="server"></asp:TextBox>
+    <br />
+    <asp:Label ID="lbl_password" runat="server" Text="Password:" ></asp:Label>
+    <asp:TextBox ID="txt_password" runat="server" TextMode="Password"></asp:TextBox>
+
+     <br />
+    <asp:Label ID="lbl_confirm_password" runat="server" Text="Confirm Password:"></asp:Label>
+    <asp:TextBox ID="txt_confirm_password" runat="server" TextMode="Password"></asp:TextBox>
+>>>>>>> 677593ab703ae2c611298cab1967ace37c1b330e
 
    <%-- <asp:Label ID="lbl_confirm_password" runat="server" Text="Confirm Password:"></asp:Label>
     <asp:TextBox ID="txt_confirm_password" runat="server" placeholder="Pls Confirm ur psw"></asp:TextBox>--%>
