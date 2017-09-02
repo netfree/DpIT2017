@@ -45,14 +45,6 @@ namespace connect_to_ue
         protected void lb_my_channels_SelectedIndexChanged(object sender, EventArgs e)
         {
             var selection = lb_my_channels.SelectedItem;
-<<<<<<< HEAD
-            
-
-            DataTable articles = SQLHelper.Show_Curstom_Articles(SQLHelper.giveNumegetID(lb_my_channels.SelectedItem.ToString()));
-            rpt_list_articles.DataSource = articles;
-            rpt_list_articles.DataBind();
-=======
->>>>>>> 677593ab703ae2c611298cab1967ace37c1b330e
 
             if (lb_my_channels.SelectedItem.ToString() != "Toate articolele:")
             {

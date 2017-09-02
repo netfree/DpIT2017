@@ -14,27 +14,13 @@ namespace connect_to_ue
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-<<<<<<< HEAD
+
             lbl_Message.Visible = false;
-=======
-               
->>>>>>> 677593ab703ae2c611298cab1967ace37c1b330e
         }
        
         protected void btn_login_Click(object sender, EventArgs e)
         {
-<<<<<<< HEAD
-            //if (txt_password.Text.Length < 6)
-            //{
-            //    //CustomValidator1.ErrorMessage = " prea putin";
-            //    lblMessage.Text = " e32324n";
-            //}
 
-            // Response.Redirect("pag2.aspx");
-
-
-=======
->>>>>>> 677593ab703ae2c611298cab1967ace37c1b330e
             if (txt_email.Text == "" || txt_password.Text == "")
             {
                 lbl_Message.Text = lbl_Message.Text = "Parola si email-ul sunt necesare!";

@@ -58,23 +58,15 @@
                    <br />
 
        
-<<<<<<< HEAD
            <%--<asp:Label ID="lbl_password" runat="server" Text="Password" CssClass="txt"></asp:Label>--%>
                  <div class="input-group">
                             <span class="input-group-addon"><asp:Label ID="lbl_password" runat="server" Text="Password" CssClass="txt" Width="70" ></asp:Label></span>
                             
-                              <asp:TextBox ID="txt_password" runat="server" CssClass="input" placeholder="min 6 char"></asp:TextBox>
+                              <asp:TextBox ID="txt_password" runat="server" CssClass="input" TextMode="Password"></asp:TextBox>
                          </div>
 
             <%--<asp:TextBox ID="txt_password" runat="server" placeholder="min 6 char" CssClass="input"></asp:TextBox>--%>  
                        
-=======
-                <tr>
-                    <td>            <asp:Label ID="lbl_password" runat="server" Text="Password" CssClass="txt"></asp:Label> </td>
-            <td><asp:TextBox ID="txt_password" TextMode="Password" runat="server" CssClass="input"></asp:TextBox>            
->>>>>>> 677593ab703ae2c611298cab1967ace37c1b330e
-            <%--<asp:RequiredFieldValidator ID="rfv_password" runat="server" ControlToValidate="txt_password" ErrorMessage="Password is required" CssClass="error_message"></asp:RequiredFieldValidator>--%>
-
                
          </div>
            

@@ -54,11 +54,8 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-<<<<<<< HEAD
-                    <a class="navbar-brand" runat="server" href="/">ConnectToEU</a>
-=======
+
                     <a class="navbar-brand" runat="server" href="~/"><span class="label label-info">c<img class="img-circle" src="/assets/DOWNSIZED.png" width="15" height="15" alt="o">nnect to UE</span></a>
->>>>>>> a48f64c8b95272f4bb1670dbe6df8b2f72fb6bb8
                 </div>
                 <div class="navbar-collapse collapse">
                     <div id ="div_btn_admin" runat="server" visible="false">

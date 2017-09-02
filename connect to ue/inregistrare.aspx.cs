@@ -79,7 +79,7 @@ namespace connect_to_ue
                 Session["user"] = registered_user;
 
 
-                Response.Redirect("Default.aspx");
+                Response.Redirect("articles_page.aspx");
             }
         }
 
