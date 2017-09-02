@@ -38,6 +38,7 @@ nav,
 section,
 summary {
   display: block;
+
 }
 
 audio,
@@ -287,6 +288,7 @@ table {
   }
   .navbar {
     display: none;
+    color: yellow;
   }
   .table td,
   .table th {

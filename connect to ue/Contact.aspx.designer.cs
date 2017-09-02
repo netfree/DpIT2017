@@ -7,11 +7,9 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace connect_to_ue
-{
-
-
-    public partial class Contact
-    {
+namespace connect_to_ue {
+    
+    
+    public partial class Contact1 {
     }
 }
