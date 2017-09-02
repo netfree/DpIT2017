@@ -14,6 +14,8 @@ namespace connect_to_ue
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            lbl_errors.Visible = false;
+
             if (!IsPostBack)
             {
                 DataTable dt = SQLHelper.GetChannels();
@@ -29,17 +31,25 @@ namespace connect_to_ue
         protected void btn_register_Click(object sender, EventArgs e)
         {
             if (txt_confirm_password.Text != txt_password.Text)
-                lbl_errors.Text = lbl_errors.Text + "Passwords do not match. " + Environment.NewLine ;
-
-            if (string.IsNullOrEmpty( txt_password.Text) )
-                lbl_errors.Text = lbl_errors.Text + "Password field is mandaory" + Environment.NewLine;
-
-            if (string.IsNullOrEmpty (txt_confirm_password.Text ) )
-                lbl_errors.Text = lbl_errors.Text + "Password confirmation is mandatory" + Environment.NewLine;
-
+            {
+                lbl_errors.Text = lbl_errors.Text + "Passwords do not match. " + Environment.NewLine;
+                lbl_errors.Visible = true;
+            }
+            if (string.IsNullOrEmpty(txt_password.Text))
+            {
+                lbl_errors.Text = lbl_errors.Text + "Password field is mandaory!" + Environment.NewLine;
+                lbl_errors.Visible = true;
+            }
+            if (string.IsNullOrEmpty(txt_confirm_password.Text))
+            {
+                lbl_errors.Text = lbl_errors.Text + "Password confirmation is mandatory!" + Environment.NewLine;
+                lbl_errors.Visible = true;
+            }
             if (txt_password.Text.Length < 6)
-                lbl_errors.Text = lbl_errors.Text + "Password is too short" + Environment.NewLine;
-
+            {
+                lbl_errors.Text = lbl_errors.Text + "Password is too short!" + Environment.NewLine;
+                lbl_errors.Visible = true;
+            }
             if (lbl_errors.Text.Length == 0)
             { 
                 byte[] salt;

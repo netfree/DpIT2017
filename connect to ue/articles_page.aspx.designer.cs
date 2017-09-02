@@ -22,15 +22,6 @@ namespace connect_to_ue {
         protected global::System.Web.UI.WebControls.ListBox lb_my_channels;
         
         /// <summary>
-        /// lbl_msg control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbl_msg;
-        
-        /// <summary>
         /// rpt_list_articles control.
         /// </summary>
         /// <remarks>
