@@ -56,6 +56,11 @@ namespace connect_to_ue
                 div_anonim.Visible = true;
             }
 
+            div_logged_user_left.Visible = (Session["user"] != null);
+
+            if (Session["user"] != null)
+                div_btn_admin.Visible = ((User)Session["user"]).isAdmin();
+
         }
 
 

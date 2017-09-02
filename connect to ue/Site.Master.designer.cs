@@ -13,6 +13,24 @@ namespace connect_to_ue {
     public partial class SiteMaster {
         
         /// <summary>
+        /// div_btn_admin control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl div_btn_admin;
+        
+        /// <summary>
+        /// div_logged_user_left control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl div_logged_user_left;
+        
+        /// <summary>
         /// div_anonim control.
         /// </summary>
         /// <remarks>
