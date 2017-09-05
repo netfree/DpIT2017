@@ -13,18 +13,19 @@
     
     <div class="row">
 
-        <div class="row">
-              <div class="col-xs-6"> </div>
-                <div class="col-xs-6 col-xs-offset-0">
-                    <asp:Label ID="lbl_Message" runat="server" CssClass="alert alert-danger"></asp:Label>
+
+                <div class="row">
+
+                        <asp:Label ID="lbl_Message" runat="server" CssClass="alert alert-danger"></asp:Label>
+                    
+                       
                 </div>
-        </div>
 
-        <div class="col-xs-4"></div>
+        <%--<div class="col-xs-3"></div>
 
-            <div class="col-xs-4 col-xs-offset-4">
+        <div class="col-xs-4 col-xs-offset-3">--%>
 
-        <div class="row">
+            <div class="row">
 
             <%--<h1 style="margin-left: 120px" >Nume/titlu</h1>--%>
             <div class="col-xs-12">
@@ -38,9 +39,7 @@
          </div>
        
          <div class="row">
-            
-               
-              
+
                      <%--<asp:Label ID="lbl_email" runat="server" Text="E-mail" CssClass="txt"></asp:Label>--%>
                         <div class="input-group">
                             <span class="input-group-addon" ><asp:Label ID="lbl_email" runat="server" Text="Email" CssClass="txt" Width="70"></asp:Label></span>
@@ -74,8 +73,8 @@
             
             <div class="row">
                 <div class="checkbox">
-                <asp:CheckBox ID="checkbox_remember" runat="server" CssClass="txt"  />
-                    Remember me
+                <asp:CheckBox ID="checkbox_remember" runat="server" CssClass="txt" text="Remember me" />
+                    
 
             </div>
     </div>
@@ -83,7 +82,8 @@
 
             <div class="row">
                 <div class="button">
-                    <asp:Button ID="btn_login" runat="server" Text="Log in" BorderColor="Aqua" OnClick="btn_login_Click" CssClass="btn" />
+                    <asp:Button ID="btn_login" runat="server" Text="Log in" OnClick="btn_login_Click" width="260" class="btn btn-warning" />
+
                 </div>
             </div>
                 <br />
@@ -97,9 +97,9 @@
                 <div class="row">
                     <asp:LinkButton ID="link_account" runat="server"  OnClick="link_account_Click" CssClass="link">Nu ai cont? Fa-ti unul acum!</asp:LinkButton>
                 </div>
-       </div>
-    </div>
+            </div>
+        </div>
             
-</div>
+  
 
     </asp:Content>

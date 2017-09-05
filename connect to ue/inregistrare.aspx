@@ -1,8 +1,9 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="inregistrare.aspx.cs" Inherits="connect_to_ue.inregistrare" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
-
+<div class="center">
  <div class="row">
+     
 
             <%--<h1 style="margin-left: 120px" >Nume/titlu</h1>--%>
            
@@ -10,7 +11,9 @@
 
                 <h1> <span class="label label-info">c<img class="img-circle" src="/assets/DOWNSIZED.png" width="30" height="30" alt="o">nnect to UE</span></h1>
        </div>
-     </div>
+     </div> 
+
+    <br />
 
            <div class="row">
     <asp:Label ID="lbl_errors" runat="server" Text="" CssClass="alert alert-danger"></asp:Label>
@@ -21,6 +24,7 @@
    <%-- <asp:Label ID="lbl_email" runat="server" Text="Email:"></asp:Label>
     <asp:TextBox ID="txt_email" runat="server"></asp:TextBox>--%>
 
+    
     <div class="row">
          <div class="input-group">
                             <span class="input-group-addon" >  <asp:Label ID="lbl_email" runat="server" Text="Email" Width="120"></asp:Label>  </span>
@@ -70,6 +74,8 @@
      <br/>
 
     <div class="row">
-        <asp:Button ID="btn_register" runat="server" Text="Register" OnClick="btn_register_Click" />
+        <asp:Button ID="btn_register" runat="server" Text="Register" OnClick="btn_register_Click" class="btn btn-warning" Width="300"/>
     </div>
+</div>
+ 
 </asp:Content>
