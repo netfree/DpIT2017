@@ -19,11 +19,17 @@ namespace connect_to_ue
                 foreach (DataRow row in dt.Rows)
                 {
                     ListItem item = new ListItem(row["Nume"].ToString(), row["ID"].ToString());
+                    if (SQLHelper.articleBelongsToChannel(Convert.ToInt32(Request.QueryString["articol"]), Convert.ToInt32(item.Value)))
+                        item.Selected = true;
                     checkboxlist_channels.Items.Add(item);
                 }
+
+                DataTable dt2 = SQLHelper.selectArticle(Convert.ToInt32(Request.QueryString["articol"]));
+                DataRow articol = dt2.Rows[0];
+
+                ckbox_public.Checked = Convert.ToBoolean(articol["Este_publicat"]);
             }
 
-            System.Diagnostics.Debug.WriteLine(Request.QueryString["articol"]);
         }
 
         protected bool ValidRequest()
@@ -49,8 +55,15 @@ namespace connect_to_ue
                         SQLHelper.addChannelToArticle(Convert.ToInt32(item.Value),request_article);
                 }
 
+                SQLHelper.setIsPublished(request_article, ckbox_public.Checked);
+
                 Response.Redirect("articles_page.aspx");
             }
+        }
+
+        protected void linkbutton_redirect_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("editare_continut?articol=" + Request.QueryString["articol"]);
         }
     }
 }

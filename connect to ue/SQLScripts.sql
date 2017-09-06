@@ -105,11 +105,13 @@ GO
 create procedure Selectare_Articole
 as
 begin
-	select * from Articol
+	select top 50 * from Articol where  Articol.Status = 1 and Articol.Este_publicat = 1 Order by Data_Publicarii DESC 
 end
 
 go
+
 --------------
+
 IF EXISTS (SELECT * FROM sys.objects WHERE type = 'P' AND name = 'Selectare_Articole_cu_canal')
 DROP PROCEDURE Selectare_Articole_cu_canal
 GO
@@ -117,12 +119,12 @@ GO
 create procedure Selectare_Articole_cu_canal(@mycanal int)
 as
 begin
-	select *
+	select top 50 *
 	from Articol_canal inner join Articol on Articol.Id = Articol_canal.Id_articol  
-	where Id_canal = @mycanal
+	where Id_canal = @mycanal and Articol.Status = 1 and Articol.Este_publicat = 1 Order by Data_Publicarii DESC 
 end
 
-go
+go 
 
 --------------
 
@@ -174,11 +176,11 @@ IF EXISTS (SELECT * FROM sys.objects WHERE type = 'P' AND name = 'insertArticle'
 DROP PROCEDURE insertArticle
 GO
 
-create procedure insertArticle (@title nvarchar(max), @content nvarchar(max), @author nvarchar (max), @publishdate datetime2(7), @authorId int)
+create procedure insertArticle (@title nvarchar(max), @content nvarchar(max), @author nvarchar (max), @publishdate datetime2(7), @authorId int, @rezumat nvarchar(max))
 as 
 begin
 
-	insert into Articol values(@title, @content , 1, @author , 1, @publishdate, @authorId)
+	insert into Articol values(@title, @content , 1, @author , 1, @publishdate, @authorId,@rezumat)
 
 	select Articol.Id from Articol where Articol.Titlu = @title and Articol.Continut = @content
 
@@ -288,3 +290,86 @@ begin
 end
 
 go
+
+--------------------------------------
+
+
+IF EXISTS (SELECT * FROM sys.objects WHERE type = 'P' AND name = 'GetAllArticlesForAdmin')
+DROP PROCEDURE GetAllArticlesForAdmin
+GO
+
+create procedure GetAllArticlesForAdmin (@userId int)
+as
+begin
+	select * from Articol where Articol.AuthorId = @userId
+end
+
+go
+
+
+----------------------------
+
+IF EXISTS (SELECT * FROM sys.objects WHERE type = 'P' AND name = 'updateArticle')
+DROP PROCEDURE updateArticle
+GO
+
+create procedure updateArticle (@title nvarchar(max), @content nvarchar(max), @author nvarchar (max), @publishdate datetime2(7), @authorId int, @articolId int)
+as 
+begin
+
+		update Articol
+		set Titlu = @title, Continut = @content, Data_Publicarii = @publishdate where @articolId = Articol.Id
+
+end
+
+go
+
+
+-----------------------------
+
+
+
+IF EXISTS (SELECT * FROM sys.objects WHERE type = 'P' AND name = 'selectArticle')
+DROP PROCEDURE selectArticle
+GO
+
+create procedure selectArticle (@articleId int)
+as 
+begin
+
+	select * from Articol where Articol.Id = @articleId
+
+end
+
+go
+
+
+-----------------------------
+
+IF EXISTS (SELECT * FROM sys.objects WHERE type = 'P' AND name = 'articleBelongsToChannel')
+DROP PROCEDURE articleBelongsToChannel
+GO
+
+create procedure articleBelongsToChannel (@articleId int, @channelId int)
+as
+begin
+	select * from Articol_canal where Articol_canal.Id_canal = @channelId and Articol_canal.Id_articol = @articleId
+end
+
+go
+
+------------------------------
+
+
+IF EXISTS (SELECT * FROM sys.objects WHERE type = 'P' AND name = 'setIsPublished')
+DROP PROCEDURE setIsPublished
+GO
+
+create procedure setIsPublished (@articleId int, @IsPublished bit)
+as
+begin
+	UPDATE Articol SET Articol.Este_publicat = @IsPublished, Articol.Status = @IsPublished WHERE Articol.Id = @articleId
+end
+
+go
+

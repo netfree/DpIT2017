@@ -31,6 +31,15 @@ namespace connect_to_ue {
         protected global::System.Web.UI.HtmlControls.HtmlTextArea txt_title;
         
         /// <summary>
+        /// txt_rezumat control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlTextArea txt_rezumat;
+        
+        /// <summary>
         /// txt_content control.
         /// </summary>
         /// <remarks>

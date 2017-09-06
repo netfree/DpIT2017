@@ -14,19 +14,35 @@
                     <br />
 
             </div>
+
+            
        </div>
 
 <div class="row" style="margin-top: 30px">
 
+    <div class="col-xs-3">
+        <asp:ListBox  ID="lb_my_channels" runat="server" OnSelectedIndexChanged="lb_my_channels_SelectedIndexChanged" ></asp:ListBox> <br />
+        <asp:ListBox ID="lb_not_my_channels" runat="server" OnSelectedIndexChanged="lb_not_my_channels_SelectedIndexChanged"></asp:ListBox>
 
-    <asp:ListBox CssClass="col-xs-3" ID="lb_my_channels" runat="server" OnSelectedIndexChanged="lb_my_channels_SelectedIndexChanged" ></asp:ListBox>
-
+    </div>
+    
+    <div id ="ana" runat="server"></div>
+    
+     <div class="col-xs-9">
+            <div class="panel panel-default panel-danger" ID="div_subscibe" runat="server">
+              <div class="panel-heading">
+                <h3 class="panel-title">Subscribe Here!</h3>
+              </div>
+              <div class="panel-body">
+                Some link to make u subscribe to: <%= getPublicChannel() %> . <br />
+                <asp:Button ID="btn_subscribe" runat="server" Text="Subscribe" OnClick="btn_subscribe_Click" />
+              </div>
+            </div>
 
     <asp:Repeater ID="rpt_list_articles" runat="server">
         <HeaderTemplate>
         
-        <div class="col-xs-9">
-        
+       
         </HeaderTemplate>
 
         <ItemTemplate>
@@ -36,7 +52,8 @@
                 <h3 class="panel-title"><%#Eval("Titlu") %> by @<%#Eval("Autor") %></h3>
               </div>
               <div class="panel-body">
-                <%#Eval("Continut") %>
+                <%#Eval("Rezumat") %> <br />
+                <a href ="/vizualizare_articol?articol=<%#Eval("Id") %>"> Show More...</a>
               </div>
             </div>
 
@@ -45,10 +62,11 @@
         </ItemTemplate>
 
         <FooterTemplate>
-            </div>
+            
         </FooterTemplate>
 
     </asp:Repeater>
+</div>
 
     </div>
 

@@ -22,6 +22,42 @@ namespace connect_to_ue {
         protected global::System.Web.UI.WebControls.ListBox lb_my_channels;
         
         /// <summary>
+        /// lb_not_my_channels control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.ListBox lb_not_my_channels;
+        
+        /// <summary>
+        /// ana control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl ana;
+        
+        /// <summary>
+        /// div_subscibe control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl div_subscibe;
+        
+        /// <summary>
+        /// btn_subscribe control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btn_subscribe;
+        
+        /// <summary>
         /// rpt_list_articles control.
         /// </summary>
         /// <remarks>

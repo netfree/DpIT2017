@@ -244,7 +244,9 @@ namespace ConnectToUE
                 new SqlParameter("canal_nume",Nume)
                 });
 
-            return Convert.ToInt32(dt.Rows[0][0]);
+            if(dt.Rows.Count > 0)
+                return Convert.ToInt32(dt.Rows[0][0]);
+            return 0;
         }
 
         public static DataTable Show_Curstom_Articles(int channelID)
@@ -271,7 +273,7 @@ namespace ConnectToUE
             return dt.Rows[0][0].ToString();
         }
 
-        public static int insertArticle(string title, string content, string author, int authorId)
+        public static int insertArticle(string title, string content, string author, int authorId, string rezumat)
         {
             //System.Diagnostics.Debug.WriteLine(((User)Session["user"]).Email);
 
@@ -282,7 +284,8 @@ namespace ConnectToUE
                 new SqlParameter("content",content),
                 new SqlParameter("author",author),
                 new SqlParameter("publishDate",publishDate),
-                new SqlParameter("authorId",authorId)
+                new SqlParameter("authorId",authorId),
+                new SqlParameter("rezumat",rezumat)
             });
 
             return Convert.ToInt32(dt.Rows[0][0]);
@@ -351,7 +354,61 @@ namespace ConnectToUE
                 new SqlParameter("user", user)
             });
             return dt;
+        }
 
+        public static DataTable GetAllArticlesForAdmin(int userId)
+        {
+            DataTable dt = ExecuteStoredProcedure("GetAllArticlesForAdmin", new SqlParameter[] {
+                new SqlParameter("userId", userId)
+            });
+
+            return dt;
+        }
+
+        public static void updateArticle(string title, string content, int ArticleId)
+        {
+            //System.Diagnostics.Debug.WriteLine(((User)Session["user"]).Email);
+
+            DateTime publishDate = System.DateTime.Now;
+
+            DataTable dt = ExecuteStoredProcedure("updateArticle", new SqlParameter[] {
+                new SqlParameter("title",title),
+                new SqlParameter("content",content),
+                new SqlParameter("author","noone"),
+                new SqlParameter("publishDate",publishDate),
+                new SqlParameter("authorId","0"),
+                new SqlParameter("ArticleId", ArticleId)
+            });
+
+        }
+
+        public static DataTable selectArticle(int ArticleId)
+        {
+            return ExecuteStoredProcedure("selectArticle", new SqlParameter[] {
+                new SqlParameter("ArticleId", ArticleId)
+            });
+        }
+
+        public static bool articleBelongsToChannel (int articleId, int channelId)
+        {
+            DataTable dt = ExecuteStoredProcedure("articleBelongsToChannel", new SqlParameter[] {
+                new SqlParameter("articleId",articleId),
+                new SqlParameter("channelId",channelId)
+            });
+
+            if (dt.Rows.Count != 0)
+                return true;
+            return false;
+        }
+
+        public static void setIsPublished(int articleId, bool IsPublished)
+        {
+            DataTable dt = ExecuteStoredProcedure("setIsPublished", new SqlParameter[] {
+                new SqlParameter("articleId",articleId),
+                new SqlParameter("IsPublished",IsPublished)
+            });
+
+          
         }
 
     }
