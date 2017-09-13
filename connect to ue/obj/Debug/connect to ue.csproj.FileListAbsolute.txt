@@ -237,3 +237,11 @@ C:\Users\Andrei\Documents\GitHub\DpIT2017\connect to ue\bin\Microsoft.Owin.Secur
 C:\Users\Andrei\Documents\GitHub\DpIT2017\connect to ue\obj\Debug\connect to ue.csprojResolveAssemblyReference.cache
 C:\Users\Andrei\Documents\GitHub\DpIT2017\connect to ue\obj\Debug\connect to ue.dll
 C:\Users\Andrei\Documents\GitHub\DpIT2017\connect to ue\obj\Debug\connect to ue.pdb
+C:\Users\Andrei\Documents\GitHub\DpIT2017\connect to ue\bin\ColorCode.dll
+C:\Users\Andrei\Documents\GitHub\DpIT2017\connect to ue\bin\Kiwi.Markdown.dll
+C:\Users\Andrei\Documents\GitHub\DpIT2017\connect to ue\bin\MarkdownSharp.dll
+C:\Users\Andrei\Documents\GitHub\DpIT2017\connect to ue\bin\Velyo.AspNet.Markdown.dll
+C:\Users\Andrei\Documents\GitHub\DpIT2017\connect to ue\bin\ColorCode.pdb
+C:\Users\Andrei\Documents\GitHub\DpIT2017\connect to ue\bin\Kiwi.Markdown.xml
+C:\Users\Andrei\Documents\GitHub\DpIT2017\connect to ue\bin\MarkdownSharp.pdb
+C:\Users\Andrei\Documents\GitHub\DpIT2017\connect to ue\bin\MarkdownSharp.xml

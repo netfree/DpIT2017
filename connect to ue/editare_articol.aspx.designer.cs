@@ -22,6 +22,24 @@ namespace connect_to_ue {
         protected global::System.Web.UI.WebControls.CheckBoxList checkboxlist_channels;
         
         /// <summary>
+        /// linkbutton_redirect control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton linkbutton_redirect;
+        
+        /// <summary>
+        /// ckbox_public control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox ckbox_public;
+        
+        /// <summary>
         /// btn_submit control.
         /// </summary>
         /// <remarks>

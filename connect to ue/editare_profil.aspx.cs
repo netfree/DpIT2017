@@ -43,7 +43,7 @@ namespace connect_to_ue
                     SQLHelper.InsertPreferences(Utilizator_ID, Convert.ToInt32(item.Value));
             }
 
-            Response.Redirect(Request.RawUrl);
+            Response.Redirect("/articles_page");
         }
     }
 }

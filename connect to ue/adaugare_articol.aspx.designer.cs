@@ -40,13 +40,21 @@ namespace connect_to_ue {
         protected global::System.Web.UI.HtmlControls.HtmlTextArea txt_title;
         
         /// <summary>
+<<<<<<< HEAD
         /// lbl_email control.
+=======
+        /// txt_rezumat control.
+>>>>>>> 728aa692acbba865b35844e5ca95173e668df65f
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
+<<<<<<< HEAD
         protected global::System.Web.UI.WebControls.Label lbl_email;
+=======
+        protected global::System.Web.UI.HtmlControls.HtmlTextArea txt_rezumat;
+>>>>>>> 728aa692acbba865b35844e5ca95173e668df65f
         
         /// <summary>
         /// txt_content control.

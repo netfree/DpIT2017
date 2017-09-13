@@ -31,7 +31,7 @@ namespace connect_to_ue
                 lbl_error.Text = "Nu ai autorizatie sa adaugi un nou articol!";
             else
             {
-                int articleID = SQLHelper.insertArticle(txt_title.InnerText, txt_content.InnerText, ((User)Session["user"]).Email, ((User)Session["user"]).Id);
+                int articleID = SQLHelper.insertArticle(txt_title.InnerText, txt_content.InnerText, ((User)Session["user"]).Email, ((User)Session["user"]).Id, txt_rezumat.InnerText);
                 Response.Redirect("editare_articol.aspx?articol=" + articleID.ToString() );
             }
             
