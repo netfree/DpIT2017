@@ -5,16 +5,26 @@
 
     <h1>Add Article:</h1> <br />
     
-    Title:<textarea id="txt_title" runat="server" cols="20" rows="2"></textarea>
+    <div class="input-group">
+        <span class="input-group-addon"><asp:Label ID="Label1" runat="server" Text="Title:" CssClass="txt" Width="70"></asp:Label></span>
+        <textarea id="txt_title" runat="server" cols="100" rows="2"></textarea>
+    </div>
+
     <br />
 
-    Content:<textarea id="txt_content" runat="server" cols="100" rows="20"></textarea>
+    <div class="input-group" >
+        <span class="input-group-addon"><asp:Label ID="lbl_email" runat="server" Text="Content:" CssClass="txt" Width="70"></asp:Label></span>
+        <textarea id="txt_content" runat="server" cols="100" rows="15"></textarea>
+    </div>
+
     <br />
     <%--Check Channels: <br /> <asp:CheckBoxList ID="ckboxlist_channels" runat="server"></asp:CheckBoxList>
     <br />--%>
    
+    <div class="row"> 
+        <span class="label label-success">Post it!<asp:Button ID="btn_submit_art" runat="server" class="btn-lg" OnClick="btn_submit_art_Click" /></span>
 
-    <asp:Button ID="btn_submit_art" runat="server" Text="Button" OnClick="btn_submit_art_Click" />
+    </div>
 </asp:Content>
 
 
